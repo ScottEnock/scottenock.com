@@ -6,7 +6,19 @@
 
 module.exports = {
   siteMetadata : {
-    title: "Evening Alliance",
+    title: "Scott Rowland Enock",
     author: "Scott Enock"
-  }
+  },
+  plugins : [
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-catch-links",
+    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/posts`,
+        name: "posts"
+      }
+    }
+  ]
 }
