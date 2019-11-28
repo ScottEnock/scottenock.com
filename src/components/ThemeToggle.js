@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class ThemeToggle extends Component {
 
     state = {
-		theme: localStorage.getItem("theme")
+		theme: window ? localStorage.getItem("theme") : null
 	}
 
 	componentDidMount = () => {
@@ -19,13 +19,16 @@ export default class ThemeToggle extends Component {
 	}
 
 	toggleTheme = () => {
-		if (this.state.theme === "light") {
-			localStorage.setItem("theme", "dark"); 
-			this.setState({theme : "dark"});
-			return
+		if (window) {
+			
+			if (this.state.theme === "light") {
+				localStorage.setItem("theme", "dark"); 
+				this.setState({theme : "dark"});
+				return
+			}
+			localStorage.setItem("theme", "light"); 
+			this.setState({theme : "light"});
 		}
-		localStorage.setItem("theme", "light"); 
-		this.setState({theme : "light"});
 	}
 
     render() {
