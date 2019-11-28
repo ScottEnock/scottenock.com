@@ -7,9 +7,11 @@ export default class HandleScroll extends Component {
     }
 
     handleScroll = () => {   
-        const topOfPage = window.scrollY < 10;
-        if (topOfPage) return document.querySelector("nav").classList.remove("scroll");
-        document.querySelector("nav").classList.add("scroll");
+        if (window) {
+            const topOfPage = window.scrollY < 10;
+            if (topOfPage) return document.querySelector("nav").classList.remove("scroll");
+            document.querySelector("nav").classList.add("scroll");
+        }
     }
 
     render() {

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+const isServer = typeof window === 'undefined';
 
 export default class ThemeToggle extends Component {
 
     state = {
-		theme: window ? localStorage.getItem("theme") : null
+		theme: !isServer && localStorage.getItem("theme")
 	}
 
 	componentDidMount = () => {
