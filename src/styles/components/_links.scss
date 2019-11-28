@@ -1,0 +1,19 @@
+a {
+    text-decoration: none;
+}
+.article-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--secondary-color);
+    &:hover {
+        color: var(--primary-color-dark);
+        background: var(--secondary-color);
+        border-bottom: 2px solid var(--primary-color-dark);
+    }
+    &:active {
+        color:var(--primary-color-dark);
+        background:var(--secondary-color);
+        border-bottom: 2px dashed var(--primary-color-dark);
+    }
+}

@@ -1,0 +1,17 @@
+body {
+    --primary-color: rgb(81, 131, 245);
+    --primary-color-dark: rgb(33, 97, 242);;
+    --secondary-color: #f0f4fe;
+    --font-color: rgb(64, 64, 64);
+    --font-color-light: rgba(0, 0, 0, 0.45);
+    --bg-color: #fff;
+    --heading-color: rgb(17, 17, 17);
+    &[theme="dark"] {
+        --primary-color: rgb(81, 131, 245);
+        --secondary-color: #323746;
+        --font-color: rgb(179, 185, 197);
+        --font-color-light: rgb(143, 149, 160);
+        --bg-color: rgb(32, 32, 32);
+        --heading-color: rgb(206, 206, 206);
+    }
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Book Companion",
+        "description": "An online dictionary for saving new words you come across in books.",
+        "image": "./images/bookCompanion.png",
+        "link": "https://bookcompanionapp.com"
+    },
+    {
+        "title": "Transcribly",
+        "description": "An invoice generator for audio transcriptions.",
+        "image": "./images/transcribly.jpg",
+        "link": ""
+    },
+    {
+        "title": "ScottEnock.com",
+        "description": "The website you're on right now!",
+        "image": "./images/takeout-box.png",
+        "link": "https://scottenock.com"
+    }
+]

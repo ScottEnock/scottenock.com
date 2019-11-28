@@ -7,10 +7,10 @@ export default function contact() {
 	return (
 		<Layout>
 			<div className="inline">
-				<h1>Let's be Penpals </h1>
-				<img src={mail} className="favicon-right" alt="(An emoji of a letter.)" />
+				<h1 style={{display: "inline-block"}} >Let's be Penpals </h1>
+				<img src={mail} className="icon" alt="(An emoji of a letter.)" />
 			</div>
-			<p>Sign up and I'll let you know when I post a new article. No spam, just information.</p>
+			<p style={{marginBottom: "40px"}} >Sign up and I'll let you know when I post a new article. No spam, just information.</p>
 			<form action="" className="newsletter-form">
 				<input type="email" required placeholder="Email Adress"/>
 				<input type="submit" value="submit"/>

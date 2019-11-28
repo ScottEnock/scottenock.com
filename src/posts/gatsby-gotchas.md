@@ -1,7 +1,8 @@
 ---
 title: Solve GraphQL Data Undefined with Static Queries in Gatsby JS
 description: How to stop your data being returned as undefined in your GraphQL query using Gatsby JS. 
-date: 03-10-2019 
+thumbnail: ./thumbnails/graphql.png
+date: "2019-10-03"
 ---
 
 # The Issue
