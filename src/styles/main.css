@@ -719,6 +719,10 @@ main {
   font-size: 1.2rem;
 }
 
+.error {
+  color: var(--primary-color);
+}
+
 .lead {
   margin-bottom: 50px;
 }
