@@ -3,6 +3,8 @@ const { SEND_IN_BLUE_API_KEY } = process.env;
 
 exports.handler = async ( event , context ) => {
 
+    console.log(event.headers["Origin"])
+
     try {
         console.log(event.body)
         const body = JSON.parse(event.body);

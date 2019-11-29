@@ -23,7 +23,7 @@ export default function post({data}) {
                   /
                   <a href={`http://twitter.com/share?text=Just read Scott's latest article: "${frontmatter.title}" and thought I'd share it!&url=https://scottenock.com/articles/${postData.fields.slug}&via=scottenock`} target="_blank" rel="noopener noreferrer">Share</a>
                   /
-                  <a href="http://github.com/scottenock" target="_blank" rel="noopener noreferrer">Edit</a>
+                  <a href={`https://github.com/ScottEnock/scottenock.com/tree/master/src/posts/${postData.fields.slug}.md`} target="_blank" rel="noopener noreferrer">Edit</a>
                 </div>
                 <div className="tag-container">
                   {frontmatter.tags && frontmatter.tags.map((tag, index) => <div key={index} className="tag">{tag}</div> )}
