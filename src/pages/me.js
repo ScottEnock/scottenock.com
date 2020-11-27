@@ -17,12 +17,11 @@ export default function me() {
 				<h2>What I'm Doing Now</h2>
 				<p>Did I mention I like Derek Sivers? An idea he raised in the podcast I mentioned above is including a "what I'm doing now" page to let readers know just that. I think it was a wonderful Idea and so here it is!</p>
 				<ul>
-					<li>Finishing off Transcribly! An invoice generator for transcriptions</li>
+					<li>Working for at <a href="https://sentai.ai/" target="_blank" rel="noopener noreferrer" >Sentai <a/>.</li>
 					<li>Writing content over here and around the web.</li>
 					<li>Getting into game development.</li>
-					<li>Starting an exciting new project revolving around our elected officials!</li>
 					<li>Dipping my toes into open source.</li>
-					<li>Managing <a href="https://pynchband.com" target="_blank" rel="noopener noreferrer">Pynch.</a></li>
+					<li>Managing and developing apps for End Child Abuse Charity.</li>
 				</ul>
 				<h2>Where you can find me</h2>
 				<ul>
