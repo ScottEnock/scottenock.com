@@ -9,7 +9,7 @@ published: true
 
 ## An Introduction
 
-If you want to start making websites that have functionality then sooner or later you're going to have to deal with databases. If you're here, I'm guessing you've picked MongoDB as your database of choice. 
+If you want to start making websites that have functionality then sooner or later you're going to have to deal with databases. If you're here, I'm guessing you've picked MongoDB as your database of choice.
 
 This article will run you through the steps on how to set up a database server and the nuances of running one.
 
@@ -17,14 +17,14 @@ For this tutorial we'll assume the server is running ubuntu 18.04.
 
 ## Dedicated or Local Database Server?
 
-A question you need to consider is whether to have a dedicated server for your DB or to have it running alongside your services on one server. 
+A question you need to consider is whether to have a dedicated server for your DB or to have it running alongside your services on one server.
 
 Both have their advantages and disadvantages which I'll try and outline here:
 
-Advantages of a dedicated DB server: 
+Advantages of a dedicated DB server:
 
 - Scalability: Separating your DB and web server from one another allows for easier scaling. If your database needs more resources and not your webserver, then you would simply allocate more resources to your DB server, avoiding having to add resources to both.
-- Performance: Having two separate servers means that they're not competing against one another for resources. 
+- Performance: Having two separate servers means that they're not competing against one another for resources.
 
 > 2 boxes = 2 times the CPU, 2 times the RAM, and 2 times the spindles for disk access. ~ Mark Brackett - Stack Overflow
 
@@ -37,7 +37,7 @@ Disadvantages of a dedicated DB server:
 
 I'm going to confess, server orchestration and dev ops isn't my forte, however, like any good full-stack developer you need to learn to get your hands dirty.
 
-Now, if you're not using Ubuntu, then check out Digital Ocean's installation tutorial. Their tutorials are a great resource to have for all things backend related. 
+Now, if you're not using Ubuntu, then check out Digital Ocean's installation tutorial. Their tutorials are a great resource to have for all things backend related.
 
 ```bash
 
@@ -49,7 +49,7 @@ sudo apt install -y mongodb
 
 After those two commands you should have MongoDB running on your server. To check this, run the following command:
 
-```bash 
+```bash
 sudo systemctl status mongodb
 ```
 
@@ -71,17 +71,17 @@ Output
 
 Alright, we're almost good to go. Let's create an admin user for the Mongo Database.
 
-First let's create an admin account for our database. Replace the `user` and `pwd` content with values that you prefer. 
+First let's create an admin account for our database. Replace the `user` and `pwd` content with values that you prefer.
 
-```bash 
+```bash
 mongo --eval "db.getSiblingDB('admin').createUser({ user: 'admin', pwd: 'ThisIsAPassword123', roles: [ { role: 'userAdminAnyDatabase', db:'admin' } ] })"
 ```
 
-It's recommended to give the "userAdminAnyDatabase" role to the admin with the intention that you would use this account to create new users with read/write privallages for a specific database. This behaviour means that the admin account can't create new database or edit existing ones which can be inconvenient. 
+It's recommended to give the "userAdminAnyDatabase" role to the admin with the intention that you would use this account to create new users with read/write privallages for a specific database. This behaviour means that the admin account can't create new database or edit existing ones which can be inconvenient.
 
-Optional: If you'd like the admin user to act more like a super user in Linux then use the following command:  
+Optional: If you'd like the admin user to act more like a super user in Linux then use the following command:
 
-```bash 
+```bash
 mongo --eval 'db.grantRolesToUser( "<adminUsername>", [ "dbAdminAnyDatabase", "readWriteAnyDatabase" ])'
 ```
 
@@ -89,9 +89,9 @@ mongo --eval 'db.grantRolesToUser( "<adminUsername>", [ "dbAdminAnyDatabase", "r
 
 Now that we have an admin user, we should secure our database by enabling authentication. This'll mean you'll have to log in to make changes to the database.
 
-To do this open `/etc/mongodb.conf` with your preferred text editor (I like nano). 
+To do this open `/etc/mongodb.conf` with your preferred text editor (I like nano).
 
-```bash 
+```bash
 nano /etc/mongodb.conf
 ```
 
@@ -103,7 +103,7 @@ Then find the `#auth = true` line and remove the hash. This will uncomment the o
 
 ### Optional: Change the default port
 
-Whilst we're editing the config file, let's change the default port that MongoDB listens on. This is for security as it prevents would be attackers targeting this known port. 
+Whilst we're editing the config file, let's change the default port that MongoDB listens on. This is for security as it prevents would be attackers targeting this known port.
 
 Remember ports 0 - 1023 are reserved
 
@@ -113,7 +113,7 @@ Remember ports 0 - 1023 are reserved
 
 ### Restart MongoDB
 
-Now, restart MongoDB for the changes to take affect: 
+Now, restart MongoDB for the changes to take affect:
 
 ```bash
 systemctl restart mongodb
@@ -121,7 +121,7 @@ systemctl restart mongodb
 
 ## Automate The Process
 
-If what I've just told you seems too much to keep doing every time you want to install MongoDB then fear not. 
+If what I've just told you seems too much to keep doing every time you want to install MongoDB then fear not.
 
 Now that you understand the fundamentals of what's going on, you can use a script to automate that whole process. I've built one recently and you're free to use it or even improve upon it. Check it out [here](https://github.com/ScottEnock/mongoDB-server-startup-script).
 
